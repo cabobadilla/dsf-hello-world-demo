@@ -1,3 +1,6 @@
+/* ── Google Fonts — HW-011 ────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
 /* ── Reset & Base ─────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,7 +18,13 @@
     --gray-600:      #4B5563;
     --gray-800:      #1F2937;
     --black:         #0A0A0A;
-    --font:          'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* HW-010: Banco de Chile brand palette */
+    --bdc-navy:      #00247D;
+    --bdc-royal:     #2E5BFF;
+    --bdc-gold:      #B09A6D;
+    --bdc-bg:        #F8F9FB;
+    /* HW-011: Open Sans body font */
+    --font:          'Open Sans', Arial, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -23,10 +32,16 @@ html { scroll-behavior: smooth; }
 body {
     font-family: var(--font);
     font-weight: 400;
-    color: var(--gray-800);
-    background: var(--white);
+    color: #555555; /* HW-010: body text → #555555 */
+    background: var(--bdc-bg); /* HW-010: page background → #F8F9FB */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ── Headings — HW-010 + HW-011 ──────────────────────── */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', Arial, sans-serif; /* HW-011 */
+    color: var(--bdc-navy); /* HW-010: headings → #00247D */
 }
 
 /* ── Nav ─────────────────────────────────────────────── */
@@ -34,9 +49,9 @@ nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(255,255,255,0.95);
+    background: var(--bdc-navy); /* HW-010: nav bg → #00247D */
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* HW-010: updated for dark bg */
 }
 .nav-inner {
     max-width: 1200px;
@@ -49,8 +64,8 @@ nav {
 }
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; }
 .logo-mark {
-    background: var(--green-deep);
-    color: var(--green-bright);
+    background: var(--bdc-navy);
+    color: var(--bdc-gold); /* HW-010: logo mark accent → gold */
     font-weight: 700;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
@@ -58,9 +73,10 @@ nav {
     border-radius: 4px;
 }
 .logo-text {
+    font-family: 'Montserrat', Arial, sans-serif; /* HW-011: nav logo-text → Montserrat */
     font-weight: 500;
     font-size: 0.95rem;
-    color: var(--gray-800);
+    color: #FFFFFF; /* HW-010: nav logo text → white */
     letter-spacing: -0.01em;
 }
 .nav-links { display: flex; gap: 2rem; }
@@ -68,18 +84,18 @@ nav {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--gray-600);
+    color: #FFFFFF; /* HW-010: nav links → white */
     transition: color 0.2s;
     letter-spacing: 0.01em;
 }
-.nav-links a:hover { color: var(--green-deep); }
+.nav-links a:hover { color: var(--bdc-gold); } /* HW-010: hover → gold */
 
 /* ── Hero ─────────────────────────────────────────────── */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--green-deep);
+    background: var(--bdc-navy); /* HW-010: hero bg → #00247D */
     padding-top: 64px;
 }
 .hero-inner {
@@ -93,8 +109,8 @@ nav {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--green-bright);
-    border: 1px solid rgba(24,209,76,0.3);
+    color: var(--bdc-gold); /* HW-010: hero-tag → gold/tan */
+    border: 1px solid rgba(176,154,109,0.4); /* HW-010: border → gold tint */
     padding: 0.35rem 0.85rem;
     border-radius: 999px;
     margin-bottom: 2rem;
@@ -103,11 +119,11 @@ nav {
     font-size: clamp(2.8rem, 6vw, 5rem);
     font-weight: 300;
     line-height: 1.1;
-    color: var(--white);
+    color: var(--white); /* hero h1 stays white (inside navy hero) */
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
 }
-.accent { color: var(--green-bright); font-weight: 600; }
+.accent { color: var(--bdc-royal); font-weight: 600; } /* HW-010: accent → #2E5BFF */
 .hero-sub {
     font-size: 1.15rem;
     font-weight: 300;
@@ -120,27 +136,32 @@ nav {
 .btn-primary {
     display: inline-flex;
     align-items: center;
-    background: var(--green-bright);
-    color: var(--green-deep);
-    font-weight: 600;
+    background: var(--bdc-navy); /* HW-010: primary CTA → #00247D */
+    color: #FFFFFF; /* HW-010: CTA text → white */
+    font-family: 'Montserrat', Arial, sans-serif; /* HW-011: button labels → Montserrat */
+    font-weight: 700; /* HW-011: button weight → 700 */
     font-size: 0.9rem;
     padding: 0.8rem 1.6rem;
     border-radius: 6px;
     text-decoration: none;
     letter-spacing: 0.01em;
+    text-transform: uppercase; /* HW-010: CTA text → uppercase */
     transition: opacity 0.2s;
+    border: 2px solid rgba(255,255,255,0.3); /* visible on navy hero bg */
 }
 .btn-primary:hover { opacity: 0.88; }
 .btn-secondary {
     display: inline-flex;
     align-items: center;
     color: rgba(255,255,255,0.7);
-    font-weight: 500;
+    font-family: 'Montserrat', Arial, sans-serif; /* HW-011: button labels → Montserrat */
+    font-weight: 700; /* HW-011 */
     font-size: 0.9rem;
     padding: 0.8rem 1.6rem;
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 6px;
     text-decoration: none;
+    text-transform: uppercase; /* HW-010 */
     transition: border-color 0.2s, color 0.2s;
 }
 .btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: white; }
@@ -154,7 +175,7 @@ nav {
 .stat-value {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--green-bright);
+    color: var(--bdc-royal); /* HW-010: stat values → #2E5BFF */
     letter-spacing: -0.03em;
     line-height: 1;
 }
@@ -174,7 +195,7 @@ nav {
 /* ── Sections ─────────────────────────────────────────── */
 .section { padding: 6rem 0; }
 .section-dark {
-    background: var(--gray-800);
+    background: var(--bdc-navy); /* HW-010: section-dark → #00247D instead of gray-800 */
     color: var(--white);
 }
 .section-inner {
@@ -187,21 +208,22 @@ nav {
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--green-mid);
+    color: var(--bdc-navy); /* HW-010: section label → navy */
     margin-bottom: 1rem;
 }
-.section-dark .section-label { color: var(--green-bright); }
+.section-dark .section-label { color: var(--bdc-gold); } /* HW-010: dark section label → gold */
 h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 300;
     letter-spacing: -0.03em;
     line-height: 1.15;
     margin-bottom: 1.25rem;
+    /* color inherited from h1,h2,h3,h4 rule → #00247D */
 }
-.section-dark h2 { color: var(--white); }
+.section-dark h2 { color: var(--white); } /* HW-010: dark section h2 → white */
 .section-desc {
     font-size: 1.05rem;
-    color: var(--gray-600);
+    color: #555555; /* HW-010: body/paragraph text → #555555 */
     max-width: 580px;
     margin-bottom: 3.5rem;
     line-height: 1.7;
@@ -212,27 +234,27 @@ h2 {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5px;
-    background: var(--gray-200);
-    border: 1.5px solid var(--gray-200);
+    gap: 1.5rem; /* HW-010: gap between cards (was 1.5px seam — cards now standalone) */
     border-radius: 12px;
     overflow: hidden;
 }
 .card {
-    background: var(--white);
+    background: #FFFFFF; /* HW-010: cards → white */
+    border-radius: 8px; /* HW-010: border-radius ≥ 8px */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* HW-010: soft box-shadow */
     padding: 2rem;
     transition: background 0.2s;
 }
-.card:hover { background: var(--green-light); }
+.card:hover { background: var(--bdc-bg); } /* HW-010: subtle hover on off-white */
 .card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
 .card h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--gray-800);
+    color: var(--bdc-navy); /* HW-010: card h3 → #00247D */
     margin-bottom: 0.6rem;
     letter-spacing: -0.01em;
 }
-.card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.65; }
+.card p { font-size: 0.9rem; color: #555555; line-height: 1.65; } /* HW-010: card p → #555555 */
 
 /* ── Pipeline ─────────────────────────────────────────── */
 .pipeline {
@@ -246,27 +268,28 @@ h2 {
     flex: 1;
     min-width: 120px;
     max-width: 155px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--bdc-navy); /* HW-010: pipeline phases → #00247D (was dark gray) */
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 8px;
     padding: 1.25rem 1rem;
 }
 .phase-num {
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--green-bright);
+    color: var(--bdc-gold); /* HW-010: phase numbers → gold/tan */
     letter-spacing: 0.1em;
     margin-bottom: 0.6rem;
 }
 .phase h4 {
+    font-family: 'Montserrat', Arial, sans-serif; /* HW-011: phase headings → Montserrat */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--white);
     margin-bottom: 0.4rem;
 }
-.phase p { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.phase p { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
 .phase-arrow {
-    color: var(--green-bright);
+    color: var(--bdc-royal); /* HW-010: phase arrow → #2E5BFF */
     font-size: 1.1rem;
     margin-top: 1.5rem;
     flex-shrink: 0;
@@ -285,7 +308,7 @@ table {
     font-size: 0.88rem;
 }
 thead tr {
-    background: var(--gray-800);
+    background: var(--bdc-navy); /* HW-010: table header → #00247D */
     color: var(--white);
 }
 thead th {
@@ -302,10 +325,12 @@ tbody tr {
     transition: background 0.15s;
 }
 tbody tr:last-child { border-bottom: none; }
-tbody tr:hover { background: var(--green-light); }
+tbody tr:nth-child(odd)  { background: #F8F9FB; } /* HW-010: alternating rows */
+tbody tr:nth-child(even) { background: #FFFFFF; } /* HW-010: alternating rows */
+tbody tr:hover { background: #EEF1F8; } /* HW-010: subtle navy-tinted hover */
 tbody td { padding: 1.1rem 1.25rem; vertical-align: top; }
-.proj-name { font-weight: 600; color: var(--gray-800); margin-bottom: 0.2rem; }
-.proj-desc { font-size: 0.8rem; color: var(--gray-400); }
+.proj-name { font-weight: 600; color: var(--bdc-navy); margin-bottom: 0.2rem; } /* HW-010 */
+.proj-desc { font-size: 0.8rem; color: #555555; } /* HW-010 */
 .tag {
     display: inline-block;
     background: var(--gray-100);
@@ -329,7 +354,7 @@ tbody td { padding: 1.1rem 1.25rem; vertical-align: top; }
 
 /* ── Footer ───────────────────────────────────────────── */
 footer {
-    background: var(--green-deep);
+    background: var(--bdc-navy); /* HW-010: footer bg → #00247D */
     padding: 3rem 0;
 }
 .footer-inner {
@@ -345,13 +370,13 @@ footer {
 .footer-logo {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--green-bright);
+    color: var(--bdc-gold); /* HW-010: footer logo → gold/tan */
     letter-spacing: 0.08em;
     margin-bottom: 0.5rem;
 }
-.footer-left p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.footer-left p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.7; } /* HW-010: footer text → white */
 .footer-right { text-align: right; }
-.footer-right p { font-size: 0.8rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
+.footer-right p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.8; } /* HW-010: footer text → white */
 .footer-copy { margin-top: 0.5rem; }
 
 /* ── Responsive ───────────────────────────────────────── */
