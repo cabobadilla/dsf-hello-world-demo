@@ -259,7 +259,7 @@ h2 {
 /* ── Pipeline ─────────────────────────────────────────── */
 .pipeline {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;   /* ← changed from flex-start */
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -272,6 +272,8 @@ h2 {
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 8px;
     padding: 1.25rem 1rem;
+    display: flex;          /* ← added */
+    flex-direction: column; /* ← added */
 }
 .phase-num {
     font-size: 0.7rem;
