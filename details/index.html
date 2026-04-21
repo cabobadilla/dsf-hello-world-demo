@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSF Details — Dark Software Factory Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Floating back button -->
+    <a href="../" class="theme-back">← Theme Gallery</a>
+
+    <!-- ══════════════════════════════════════════════════════
+         NAV
+    ══════════════════════════════════════════════════════ -->
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="logo-mark">DSF</span>
+                <span class="logo-text">Dark Software Factory</span>
+            </div>
+            <div class="nav-links">
+                <a href="#agents">Agent Roster</a>
+                <a href="#pipeline">Pipeline</a>
+                <a href="#rules">Critical Rules</a>
+                <a href="../" class="nav-back">← Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 1 — HERO / PROJECT DEFINITION
+    ══════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-tag">Internal Documentation</div>
+            <h1>Dark Software Factory</h1>
+            <p class="hero-sub">An autonomous multi-agent pipeline that designs, builds, tests, and deploys software — orchestrated by Hermes, executed by specialized AI agents.</p>
+        </div>
+    </section>
+
+    <!-- Definition cards (light bg, below hero) -->
+    <div class="def-cards-wrap">
+        <div class="def-cards">
+            <div class="def-card">
+                <div class="def-card-label">What it is</div>
+                <h3>Autonomous Delivery System</h3>
+                <p>A fully autonomous software delivery system using 4+ specialized AI agents. Each agent has a single role, sleeps when idle, and wakes only for its phase.</p>
+            </div>
+            <div class="def-card">
+                <div class="def-card-label">How it runs</div>
+                <h3>Hermes Orchestrates</h3>
+                <p>Hermes (the orchestrator) receives requests, refines requirements, delegates to agents, judges output, and reports results. No human intervention between phases.</p>
+            </div>
+            <div class="def-card">
+                <div class="def-card-label">What it costs</div>
+                <h3>~$10 Per Project</h3>
+                <p>Target: ~$10 per project. Haiku 4.5 for mechanical tasks ($1/$5 MTok), Sonnet 4.6 for reasoning ($3/$15 MTok). Budget enforced per agent.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 2 — AGENTS TABLE
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section-light" id="agents">
+        <div class="section-inner">
+            <div class="section-label">Agent Roster</div>
+            <h2>Eight Specialized Agents</h2>
+            <p class="section-desc">Eight specialized agents — each with a defined role, model, and budget.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Agent</th>
+                            <th>Role</th>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Max Turns</th>
+                            <th>Budget Cap</th>
+                            <th>Responsibilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="agent-name">🧭 Hermes</span></td>
+                            <td>Orchestrator &amp; Judge</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-sonnet-4-6</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="resp-list">Receives requests · Refines requirements · Delegates to agents · Judges all output · Reports to user</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">📋 PO Agent</span></td>
+                            <td>Product Owner</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-haiku-4-5</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>10</td>
+                            <td><span class="budget-cap">$0.50</span></td>
+                            <td class="resp-list">Translates briefs into user stories · Writes acceptance criteria · Syncs cards to Plane.so</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">🏗️ Architect Agent</span></td>
+                            <td>System Designer</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-sonnet-4-6</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>20</td>
+                            <td><span class="budget-cap">$2.00</span></td>
+                            <td class="resp-list">Selects tech stack · Designs architecture · Creates project skeleton · Writes railway.toml</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">👨‍💻 Developer Agent</span></td>
+                            <td>Full-Stack Dev</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-sonnet-4-6</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>15</td>
+                            <td><span class="budget-cap">$1.00/story</span></td>
+                            <td class="resp-list">Implements stories via TDD · Red→Green→Refactor · Commits to feature branches · Pushes to GitHub</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">🧪 QA Agent (Plan)</span></td>
+                            <td>Test Planner</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-haiku-4-5</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>8</td>
+                            <td><span class="budget-cap">$0.50</span></td>
+                            <td class="resp-list">Writes test plan before coding · Creates test stubs · Defines smoke test subset</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">✅ QA Agent (Exec)</span></td>
+                            <td>Test Executor</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-haiku-4-5</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>10</td>
+                            <td><span class="budget-cap">$0.50</span></td>
+                            <td class="resp-list">Runs smoke tests · Classifies failures · Routes bugs back to Developer · Signs off Done</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">🚀 DevOps Agent</span></td>
+                            <td>Deployment</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-haiku-4-5</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>12</td>
+                            <td><span class="budget-cap">$0.50</span></td>
+                            <td class="resp-list">Deploys to GitHub Pages or Railway · Verifies HTTP 200 · Reports live URL</td>
+                        </tr>
+                        <tr>
+                            <td><span class="agent-name">🔍 Spec/Quality Review</span></td>
+                            <td>Code Reviewer</td>
+                            <td><code style="font-size:0.78rem;background:#EEF1F8;color:#00247D;padding:0.1rem 0.35rem;border-radius:3px;">claude-haiku-4-5</code></td>
+                            <td>Anthropic Direct</td>
+                            <td>5</td>
+                            <td><span class="budget-cap">$0.20</span></td>
+                            <td class="resp-list">Checks code against spec · Validates no scope creep · Approves or triggers fix loop</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 3 — PROCESS FLOW DIAGRAM (SVG)
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section-alt" id="pipeline">
+        <div class="section-inner">
+            <div class="section-label">The 7-Phase Pipeline</div>
+            <h2>From Request to Deployment</h2>
+            <p class="section-desc">From a single user request to a live deployed application — fully autonomous.</p>
+
+            <!-- Inline SVG Pipeline Diagram -->
+            <div class="pipeline-wrap">
+                <svg class="pipeline-svg" viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DSF 7-Phase Pipeline Diagram">
+                    <rect width="1100" height="420" fill="#00247D"/>
+
+                    <!-- Title bar -->
+                    <text x="30" y="38" font-family="Montserrat,Arial,sans-serif" font-size="13" font-weight="700" fill="#B09A6D" letter-spacing="2">DSF PIPELINE</text>
+                    <line x1="30" y1="48" x2="1070" y2="48" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+                    <!-- ── Phase Boxes (y=70, height=100, width=112, gap=18) ── -->
+                    <!-- x positions: 30, 160, 290, 420, 550, 680, 810 (each box 112 wide, 22 arrow gap) -->
+
+                    <!-- Phase 01 — Discovery (Gold border — Hermes) -->
+                    <rect x="30" y="70" width="112" height="100" rx="8" fill="rgba(176,154,109,0.12)" stroke="#B09A6D" stroke-width="2"/>
+                    <text x="42" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">01</text>
+                    <text x="42" y="116" font-family="Montserrat,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Discovery</text>
+                    <text x="42" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">Hermes</text>
+                    <text x="42" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="#B09A6D">Orchestrator</text>
+                    <text x="42" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Sonnet 4.6</text>
+
+                    <!-- Arrow 1 -->
+                    <text x="146" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 02 — Stories (Gray border — Haiku/PO) -->
+                    <rect x="165" y="70" width="112" height="100" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    <text x="177" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">02</text>
+                    <text x="177" y="116" font-family="Montserrat,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Stories</text>
+                    <text x="177" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">PO Agent</text>
+                    <text x="177" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(176,176,176,0.8)">Mechanical</text>
+                    <text x="177" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Haiku 4.5</text>
+
+                    <!-- Arrow 2 -->
+                    <text x="281" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 03 — Architecture (Blue border — Sonnet/Architect) -->
+                    <rect x="300" y="70" width="112" height="100" rx="8" fill="rgba(107,159,255,0.08)" stroke="#6B9FFF" stroke-width="2"/>
+                    <text x="312" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">03</text>
+                    <text x="312" y="116" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Architecture</text>
+                    <text x="312" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">Architect</text>
+                    <text x="312" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="#6B9FFF">Reasoning</text>
+                    <text x="312" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Sonnet 4.6</text>
+
+                    <!-- Arrow 3 -->
+                    <text x="416" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 04 — Test Plan (Gray border — Haiku/QA Plan) -->
+                    <rect x="435" y="70" width="112" height="100" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    <text x="447" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">04</text>
+                    <text x="447" y="116" font-family="Montserrat,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Test Plan</text>
+                    <text x="447" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">QA Agent (Plan)</text>
+                    <text x="447" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(176,176,176,0.8)">Mechanical</text>
+                    <text x="447" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Haiku 4.5</text>
+
+                    <!-- Arrow 4 -->
+                    <text x="551" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 05 — Development (Blue border — Sonnet/Developer) -->
+                    <rect x="570" y="70" width="112" height="100" rx="8" fill="rgba(107,159,255,0.08)" stroke="#6B9FFF" stroke-width="2"/>
+                    <text x="582" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">05</text>
+                    <text x="582" y="116" font-family="Montserrat,Arial,sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Development</text>
+                    <text x="582" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">Developer</text>
+                    <text x="582" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="#6B9FFF">Reasoning</text>
+                    <text x="582" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Sonnet 4.6</text>
+
+                    <!-- Arrow 5 -->
+                    <text x="686" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 06 — QA Exec (Gray border — Haiku/QA Exec) -->
+                    <rect x="705" y="70" width="112" height="100" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    <text x="717" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">06</text>
+                    <text x="717" y="116" font-family="Montserrat,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">QA Exec</text>
+                    <text x="717" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">QA Agent (Exec)</text>
+                    <text x="717" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(176,176,176,0.8)">Mechanical</text>
+                    <text x="717" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Haiku 4.5</text>
+
+                    <!-- Arrow 6 -->
+                    <text x="821" y="126" font-family="Arial,sans-serif" font-size="16" fill="#B09A6D" opacity="0.7">→</text>
+
+                    <!-- Phase 07 — Delivery (Gold border — Hermes + DevOps) -->
+                    <rect x="840" y="70" width="112" height="100" rx="8" fill="rgba(176,154,109,0.12)" stroke="#B09A6D" stroke-width="2"/>
+                    <text x="852" y="96" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="700" fill="#B09A6D">07</text>
+                    <text x="852" y="116" font-family="Montserrat,Arial,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Delivery</text>
+                    <text x="852" y="133" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)">Hermes + DevOps</text>
+                    <text x="852" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="#B09A6D">Orchestrator</text>
+                    <text x="852" y="162" font-family="Open Sans,Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.4)">Sonnet 4.6</text>
+
+                    <!-- ── Feedback Loop Arcs ── -->
+                    <!-- Arc 1: Phase 06 → Phase 05 (Bug Fix loop) — below boxes -->
+                    <path d="M 761 172 Q 761 230 626 230 Q 490 230 490 172"
+                          fill="none" stroke="#FF6B6B" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrowRed)"/>
+                    <text x="570" y="248" font-family="Open Sans,Arial,sans-serif" font-size="9" fill="#FF6B6B" text-anchor="middle">Bug → Fix loop</text>
+
+                    <!-- Arc 2: Phase 07 → Phase 02 (Next iteration) — below boxes -->
+                    <path d="M 896 172 Q 896 275 355 275 Q 220 275 220 172"
+                          fill="none" stroke="#B09A6D" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowGold)"/>
+                    <text x="560" y="295" font-family="Open Sans,Arial,sans-serif" font-size="9" fill="#B09A6D" text-anchor="middle">Next iteration</text>
+
+                    <!-- Arrow markers -->
+                    <defs>
+                        <marker id="arrowRed" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
+                            <polygon points="0 0, 7 3.5, 0 7" fill="#FF6B6B"/>
+                        </marker>
+                        <marker id="arrowGold" markerWidth="7" markerHeight="7" refX="3" refY="3.5" orient="auto">
+                            <polygon points="0 0, 7 3.5, 0 7" fill="#B09A6D"/>
+                        </marker>
+                    </defs>
+
+                    <!-- ── Legend (right side) ── -->
+                    <rect x="975" y="68" width="115" height="108" rx="7" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                    <text x="990" y="87" font-family="Montserrat,Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="1.5">LEGEND</text>
+
+                    <rect x="990" y="96" width="12" height="12" rx="2" fill="none" stroke="#B09A6D" stroke-width="2"/>
+                    <text x="1008" y="107" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.75)">Gold = Hermes</text>
+                    <text x="1008" y="118" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)">(Orchestrator)</text>
+
+                    <rect x="990" y="126" width="12" height="12" rx="2" fill="none" stroke="#6B9FFF" stroke-width="2"/>
+                    <text x="1008" y="137" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.75)">Blue = Sonnet</text>
+                    <text x="1008" y="148" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)">(Reasoning)</text>
+
+                    <rect x="990" y="156" width="12" height="12" rx="2" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+                    <text x="1008" y="167" font-family="Open Sans,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.75)">Gray = Haiku</text>
+                    <text x="1008" y="178" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.4)">(Mechanical)</text>
+
+                    <!-- Footer note -->
+                    <text x="30" y="315" font-family="Open Sans,Arial,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.3)">Human checkpoints: (1) Confirm brief  ·  (2) Approve stories  ·  (3) See live result — everything else runs autonomously.</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 4 — CRITICAL RULES
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section-light" id="rules">
+        <div class="section-inner">
+            <div class="section-label">⚠️ Critical Rules</div>
+            <h2>Non-Negotiable System Rules</h2>
+            <p class="section-desc">These rules are non-negotiable. They exist because violations have occurred and been corrected.</p>
+
+            <div class="rules-grid">
+
+                <!-- Rule 1 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 01</div>
+                    <div class="rule-title">Hermes Never Codes</div>
+                    <p class="rule-desc">Hermes is Orchestrator + Judge ONLY. If Hermes finds itself writing implementation code → STOP → delegate to Developer Agent. No exceptions.</p>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 02</div>
+                    <div class="rule-title">PO Agent Runs First, Always</div>
+                    <p class="rule-desc">Every change, no matter how small, goes through PO Agent first. There are no 'small changes' that skip the process.</p>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 03</div>
+                    <div class="rule-title">Stories Before Code</div>
+                    <p class="rule-desc">User stories with acceptance criteria must be created in Plane.so BEFORE any Developer Agent is invoked. Retrospective stories are violations.</p>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 04</div>
+                    <div class="rule-title">Judge Every Output</div>
+                    <p class="rule-desc">Hermes reviews ALL agent output before proceeding. Vague language, missing criteria, or scope creep = rejected and re-run.</p>
+                </div>
+
+                <!-- Rule 5 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 05</div>
+                    <div class="rule-title">3 Checkpoints Only</div>
+                    <p class="rule-desc">User touches exactly 3 points: (1) confirm brief, (2) approve stories, (3) see live result. Everything else runs autonomously.</p>
+                </div>
+
+                <!-- Rule 6 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 06</div>
+                    <div class="rule-title">TDD Strict</div>
+                    <p class="rule-desc">Developer Agent writes failing tests FIRST (RED), then minimal code to pass (GREEN), then refactors. No code before tests.</p>
+                </div>
+
+                <!-- Rule 7 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 07</div>
+                    <div class="rule-title">One Plane Project per DSF Project</div>
+                    <p class="rule-desc">No 'DSF —' prefix in project names. Workspace context is sufficient. Each project maps 1:1 to a Plane board.</p>
+                </div>
+
+                <!-- Rule 8 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 08</div>
+                    <div class="rule-title">Budget Enforced Per Agent</div>
+                    <p class="rule-desc">Haiku for mechanical tasks, Sonnet for reasoning. Never Opus. Total target: ~$10 per project. Caps enforced before invocation.</p>
+                </div>
+
+                <!-- Rule 9 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 09</div>
+                    <div class="rule-title">Sonnet for Reasoning, Haiku for Structure</div>
+                    <p class="rule-desc">Architect and Developer use <code>claude-sonnet-4-6</code>. PO, QA, DevOps, Reviews use <code>claude-haiku-4-5</code>.</p>
+                </div>
+
+                <!-- Rule 10 -->
+                <div class="rule-card">
+                    <div class="rule-num">Rule 10</div>
+                    <div class="rule-title">Git Reset Before Every Agent</div>
+                    <p class="rule-desc">Before any Developer Agent touches the repo: <code>git fetch origin &amp;&amp; git reset --hard origin/main</code>. Prevents divergence bugs.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 5 — FOOTER
+    ══════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-logo">DSF</div>
+                <p>Dark Software Factory · Internal Documentation</p>
+            </div>
+            <div class="footer-right">
+                <p>Updated April 2026 · Managed by Hermes Agent</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
