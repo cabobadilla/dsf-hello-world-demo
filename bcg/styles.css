@@ -1,14 +1,18 @@
-/* ── BCG Theme — System Fonts Only ─────────────────────── */
+/* ── BCG Theme — Correct Brand Colors ─────────────────── */
 
 /* ── Reset & Base ─────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bcg-red:       #CC0000;
-    --bcg-dark:      #1A1A1A;
-    --bcg-bg:        #FFFFFF;
-    --bcg-body:      #333333;
-    --gray-100:      #F3F4F6;
+    --bcg-green:     #7EF473;
+    --bcg-forest:    #0E3E1B;
+    --bcg-black:     #212427;
+    --bcg-white:     #FFFFFF;
+    --bcg-gray:      #F2F2F2;
+    --bcg-mint:      #DCF9E3;
+    --bcg-dark:      #212427;
+    --bcg-body:      #444444;
+    --gray-100:      #F2F2F2;
     --gray-200:      #E5E7EB;
     --gray-300:      #D1D5DB;
     --gray-400:      #9CA3AF;
@@ -26,7 +30,7 @@ body {
     font-family: var(--font-body);
     font-weight: 400;
     color: var(--bcg-body);
-    background: var(--bcg-bg);
+    background: var(--bcg-white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -34,7 +38,7 @@ body {
 /* ── Headings ──────────────────────────────────────────── */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    color: var(--bcg-dark);
+    color: var(--bcg-black);
 }
 
 /* ── Nav ─────────────────────────────────────────────── */
@@ -56,7 +60,7 @@ nav {
 }
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; }
 .logo-mark {
-    background: var(--bcg-red);
+    background: var(--bcg-forest);
     color: #FFFFFF;
     font-family: var(--font-body);
     font-weight: 700;
@@ -69,7 +73,7 @@ nav {
     font-family: var(--font-heading);
     font-weight: 400;
     font-size: 1rem;
-    color: var(--bcg-dark);
+    color: var(--bcg-black);
     letter-spacing: 0;
 }
 .nav-links { display: flex; gap: 2rem; }
@@ -78,20 +82,20 @@ nav {
     font-family: var(--font-body);
     font-size: 0.88rem;
     font-weight: 400;
-    color: var(--bcg-dark);
+    color: var(--bcg-black);
     transition: color 0.2s;
     letter-spacing: 0.01em;
     border-bottom: 2px solid transparent;
     padding-bottom: 2px;
 }
-.nav-links a:hover { color: var(--bcg-red); border-bottom-color: var(--bcg-red); }
+.nav-links a:hover { color: var(--bcg-black); border-bottom-color: var(--bcg-green); }
 
 /* ── Hero ─────────────────────────────────────────────── */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--bcg-dark);
+    background: var(--bcg-forest);
     padding-top: 64px;
 }
 .hero-inner {
@@ -106,8 +110,8 @@ nav {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--bcg-red);
-    border: 1px solid rgba(204,0,0,0.5);
+    color: var(--bcg-green);
+    border: 1px solid rgba(126,244,115,0.5);
     padding: 0.35rem 0.85rem;
     border-radius: 0;
     margin-bottom: 2rem;
@@ -120,7 +124,7 @@ nav {
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
 }
-.accent { color: var(--bcg-red); font-style: italic; }
+.accent { color: var(--bcg-green); font-style: italic; }
 .hero-sub {
     font-family: var(--font-body);
     font-size: 1.1rem;
@@ -134,13 +138,13 @@ nav {
 .btn-primary {
     display: inline-flex;
     align-items: center;
-    background: var(--bcg-red);
-    color: #FFFFFF;
+    background: var(--bcg-green);
+    color: var(--bcg-black);
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.88rem;
     padding: 0.8rem 1.6rem;
-    border-radius: 2px;
+    border-radius: 4px;
     text-decoration: none;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -156,7 +160,7 @@ nav {
     font-size: 0.88rem;
     padding: 0.8rem 1.6rem;
     border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 2px;
+    border-radius: 4px;
     text-decoration: none;
     text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
@@ -173,7 +177,7 @@ nav {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
-    color: var(--bcg-red);
+    color: var(--bcg-green);
     letter-spacing: -0.03em;
     line-height: 1;
 }
@@ -194,7 +198,7 @@ nav {
 /* ── Sections ─────────────────────────────────────────── */
 .section { padding: 6rem 0; }
 .section-dark {
-    background: var(--bcg-dark);
+    background: var(--bcg-forest);
     color: var(--white);
 }
 .section-inner {
@@ -208,7 +212,7 @@ nav {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--bcg-red);
+    color: var(--bcg-forest);
     margin-bottom: 1rem;
 }
 .section-dark .section-label { color: rgba(255,255,255,0.5); }
@@ -239,17 +243,17 @@ h2 {
 .card {
     background: #FFFFFF;
     border-radius: 0;
-    border: 1px solid var(--gray-200);
+    border: 1px solid #D4D4D4;
     padding: 2rem;
     transition: border-color 0.2s;
 }
-.card:hover { border-color: var(--bcg-red); }
+.card:hover { border-color: var(--bcg-green); }
 .card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
 .card h3 {
     font-family: var(--font-heading);
     font-size: 1rem;
     font-weight: 700;
-    color: var(--bcg-dark);
+    color: var(--bcg-black);
     margin-bottom: 0.6rem;
     letter-spacing: 0;
 }
@@ -268,7 +272,7 @@ h2 {
     min-width: 120px;
     max-width: 155px;
     background: #2A2A2A;
-    border: 1px solid rgba(204,0,0,0.3);
+    border: 1px solid rgba(126,244,115,0.3);
     border-radius: 0;
     padding: 1.25rem 1rem;
     display: flex;
@@ -278,7 +282,7 @@ h2 {
     font-family: var(--font-body);
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--bcg-red);
+    color: var(--bcg-green);
     letter-spacing: 0.1em;
     margin-bottom: 0.6rem;
 }
@@ -292,7 +296,7 @@ h2 {
 }
 .phase p { font-family: var(--font-body); font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
 .phase-arrow {
-    color: var(--bcg-red);
+    color: var(--bcg-green);
     font-size: 1.1rem;
     margin-top: 1.5rem;
     flex-shrink: 0;
@@ -312,7 +316,7 @@ table {
     font-family: var(--font-body);
 }
 thead tr {
-    background: var(--bcg-dark);
+    background: var(--bcg-forest);
     color: var(--white);
 }
 thead th {
@@ -331,9 +335,9 @@ tbody tr {
 tbody tr:last-child { border-bottom: none; }
 tbody tr:nth-child(odd)  { background: #FAFAFA; }
 tbody tr:nth-child(even) { background: #FFFFFF; }
-tbody tr:hover { background: #FFF5F5; }
+tbody tr:hover { background: var(--bcg-mint); }
 tbody td { padding: 1.1rem 1.25rem; vertical-align: top; }
-.proj-name { font-family: var(--font-heading); font-weight: 700; color: var(--bcg-dark); margin-bottom: 0.2rem; }
+.proj-name { font-family: var(--font-heading); font-weight: 700; color: var(--bcg-black); margin-bottom: 0.2rem; }
 .proj-desc { font-family: var(--font-body); font-size: 0.8rem; color: var(--bcg-body); }
 .tag {
     display: inline-block;
@@ -358,7 +362,7 @@ tbody td { padding: 1.1rem 1.25rem; vertical-align: top; }
 
 /* ── Footer ───────────────────────────────────────────── */
 footer {
-    background: var(--bcg-dark);
+    background: var(--bcg-forest);
     padding: 3rem 0;
 }
 .footer-inner {
@@ -376,7 +380,7 @@ footer {
     font-size: 1.4rem;
     font-weight: 700;
     font-style: italic;
-    color: var(--bcg-red);
+    color: var(--bcg-green);
     letter-spacing: 0;
     margin-bottom: 0.5rem;
 }
