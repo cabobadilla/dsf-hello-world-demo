@@ -53,9 +53,9 @@
         /* ── Cards Grid ─────────────────────────────────── */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.75rem;
-            max-width: 960px;
+            max-width: 1060px;
             width: 100%;
         }
 
@@ -158,6 +158,11 @@
         .bcg .card-badge { background: #DCF9E3; color: #0E3E1B; }
         .bcg .card-btn { background: #7EF473; color: #212427; }
 
+        /* ── BCP Card ──────────────────────────────────── */
+        .bcp .card-strip { background: #FF7800; }
+        .bcp .card-badge { background: #FFF0E0; color: #FF7800; }
+        .bcp .card-btn { background: #FF7800; color: #FFFFFF; }
+
         /* ── Footer ────────────────────────────────────── */
         .gallery-footer {
             margin-top: 3.5rem;
@@ -175,7 +180,7 @@
             }
         }
 
-        @media (min-width: 721px) and (max-width: 900px) {
+        @media (min-width: 721px) and (max-width: 1000px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -240,6 +245,23 @@
                     <div class="swatch" style="background:#DCF9E3;border-color:#ddd;" title="#DCF9E3 Mint"></div>
                 </div>
                 <a href="bcg/" class="card-btn">View Theme →</a>
+            </div>
+        </div>
+
+        <!-- BCP Card -->
+        <div class="theme-card bcp">
+            <div class="card-strip" style="background:#FF7800"></div>
+            <div class="card-body">
+                <span class="card-badge" style="background:#FFF0E0;color:#FF7800">BCP</span>
+                <div class="card-title">BCP Bank Peru</div>
+                <div class="card-subtitle">Energetic Orange &amp; Navy</div>
+                <div class="card-swatch">
+                    <div class="swatch" style="background:#002A8D;" title="#002A8D Navy"></div>
+                    <div class="swatch" style="background:#FF7800;" title="#FF7800 Orange"></div>
+                    <div class="swatch" style="background:#0A47F0;" title="#0A47F0 Accent Blue"></div>
+                    <div class="swatch" style="background:#F2F8FF;border:1px solid #ccc;" title="#F2F8FF Light BG"></div>
+                </div>
+                <a href="bcp/" class="card-btn" style="background:#FF7800;color:#fff">View Theme →</a>
             </div>
         </div>
 
