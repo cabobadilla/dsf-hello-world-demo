@@ -3,240 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Software Factory</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>DSF Theme Gallery</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F8F8F8;
+            color: #333333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .gallery-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #999999;
+            margin-bottom: 0.8rem;
+        }
+
+        .gallery-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 400;
+            color: #1A1A1A;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .gallery-subtitle {
+            font-size: 1rem;
+            color: #666666;
+            max-width: 460px;
+            line-height: 1.65;
+            margin: 0 auto;
+        }
+
+        /* ── Cards Grid ─────────────────────────────────── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            max-width: 960px;
+            width: 100%;
+        }
+
+        .theme-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        /* Colored top strip */
+        .card-strip {
+            height: 6px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 2rem 1.75rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            margin-bottom: 1.2rem;
+            align-self: flex-start;
+        }
+
+        .card-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #1A1A1A;
+            margin-bottom: 0.4rem;
+            line-height: 1.25;
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: #888888;
+            margin-bottom: 1.75rem;
+            line-height: 1.5;
+        }
+
+        .card-swatch {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid rgba(0,0,0,0.06);
+        }
+
+        .card-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 0.65rem 1.35rem;
+            border-radius: 6px;
+            text-align: center;
+            transition: opacity 0.2s;
+            margin-top: auto;
+        }
+
+        .card-btn:hover { opacity: 0.85; }
+
+        /* ── BCH Card ──────────────────────────────────── */
+        .bch .card-strip { background: #00247D; }
+        .bch .card-badge { background: rgba(0,36,125,0.1); color: #00247D; }
+        .bch .card-btn { background: #00247D; color: #FFFFFF; }
+
+        /* ── BCI Card ──────────────────────────────────── */
+        .bci .card-strip { background: #0072CE; }
+        .bci .card-badge { background: rgba(0,114,206,0.1); color: #0072CE; }
+        .bci .card-btn { background: #0072CE; color: #FFFFFF; }
+
+        /* ── BCG Card ──────────────────────────────────── */
+        .bcg .card-strip { background: #CC0000; }
+        .bcg .card-badge { background: rgba(204,0,0,0.08); color: #CC0000; }
+        .bcg .card-btn { background: #CC0000; color: #FFFFFF; }
+
+        /* ── Footer ────────────────────────────────────── */
+        .gallery-footer {
+            margin-top: 3.5rem;
+            text-align: center;
+            font-size: 0.78rem;
+            color: #AAAAAA;
+            line-height: 1.8;
+        }
+
+        /* ── Responsive ─────────────────────────────────── */
+        @media (max-width: 720px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+            }
+        }
+
+        @media (min-width: 721px) and (max-width: 900px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-inner">
-            <div class="nav-logo">
-                <span class="logo-mark">DSF</span>
-                <span class="logo-text">Dark Software Factory</span>
-            </div>
-            <div class="nav-links">
-                <a href="#what-we-do">What We Do</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#projects">Projects</a>
-            </div>
-        </div>
-    </nav>
+    <header class="gallery-header">
+        <div class="gallery-eyebrow">Dark Software Factory</div>
+        <h1 class="gallery-title">DSF Theme Gallery</h1>
+        <p class="gallery-subtitle">Choose a design theme to preview the Dark Software Factory</p>
+    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-tag">Autonomous AI Pipeline</div>
-            <h1>Welcome to the<br><span class="accent">Dark Software Factory</span></h1>
-            <p class="hero-sub">A fully autonomous multi-agent pipeline that designs, builds, tests, and deploys software — without human intervention at each step.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">See Live Projects →</a>
-                <a href="#how-it-works" class="btn-secondary">How It Works</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">AI Agents</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <div class="stat-value">~$10</div>
-                    <div class="stat-label">Cost per Project</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <div class="stat-value">238</div>
-                    <div class="stat-label">Tests Written</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Autonomous</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="cards-grid">
 
-    <!-- WHAT WE DO -->
-    <section class="section" id="what-we-do">
-        <div class="section-inner">
-            <div class="section-label">WHAT WE DO</div>
-            <h2>Software delivery,<br>fully automated.</h2>
-            <p class="section-desc">The Dark Software Factory orchestrates specialized AI agents that handle every phase of software development — from requirements to deployment — so you can focus on what to build, not how.</p>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-icon">📋</div>
-                    <h3>Requirements & Stories</h3>
-                    <p>The PO Agent translates your idea into a structured, prioritized backlog of user stories — each with clear acceptance criteria and measurable outcomes.</p>
+        <!-- BCH Card -->
+        <div class="theme-card bch">
+            <div class="card-strip"></div>
+            <div class="card-body">
+                <span class="card-badge">BCH</span>
+                <div class="card-title">Banco de Chile</div>
+                <div class="card-subtitle">Corporate Navy &amp; Gold</div>
+                <div class="card-swatch">
+                    <div class="swatch" style="background:#00247D;" title="#00247D Navy"></div>
+                    <div class="swatch" style="background:#2E5BFF;" title="#2E5BFF Royal Blue"></div>
+                    <div class="swatch" style="background:#B09A6D;" title="#B09A6D Gold"></div>
+                    <div class="swatch" style="background:#F8F9FB;" title="#F8F9FB Off-white" style="border-color:#ddd;"></div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🏗️</div>
-                    <h3>Architecture & Design</h3>
-                    <p>The Architect Agent selects the right stack, designs the system, and generates project scaffolding — all aligned with your constraints and budget.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">👨‍💻</div>
-                    <h3>Test-Driven Development</h3>
-                    <p>The Developer Agent writes failing tests first, then implements the minimum code to pass — following TDD strictly, story by story.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🧪</div>
-                    <h3>Quality Assurance</h3>
-                    <p>The QA Agent validates every story against acceptance criteria. Nothing moves to Done until tests pass — no exceptions.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Automated Deployment</h3>
-                    <p>The DevOps Agent analyzes the project and deploys it to the right platform — GitHub Pages, Railway, or Vercel — with CI/CD from day one.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Live Project Tracking</h3>
-                    <p>Every agent action is tracked in real-time on Plane.so. Each project gets its own Kanban board, updated automatically as agents work.</p>
-                </div>
+                <a href="bch/" class="card-btn">View Theme →</a>
             </div>
         </div>
-    </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section section-dark" id="how-it-works">
-        <div class="section-inner">
-            <div class="section-label">HOW IT WORKS</div>
-            <h2>Seven phases.<br>Zero manual steps.</h2>
-            <p class="section-desc">From a single brief to a live, deployed application — the factory runs all seven phases autonomously, with human checkpoints at key decisions.</p>
-            <div class="pipeline">
-                <div class="phase">
-                    <div class="phase-num">01</div>
-                    <div class="phase-content">
-                        <h4>Discovery</h4>
-                        <p>Hermes interviews you with structured questions to produce a precise project brief.</p>
-                    </div>
+        <!-- BCI Card -->
+        <div class="theme-card bci">
+            <div class="card-strip"></div>
+            <div class="card-body">
+                <span class="card-badge">BCI</span>
+                <div class="card-title">BCI Bank</div>
+                <div class="card-subtitle">Modern Blue &amp; White</div>
+                <div class="card-swatch">
+                    <div class="swatch" style="background:#003366;" title="#003366 Navy"></div>
+                    <div class="swatch" style="background:#0072CE;" title="#0072CE Bright Blue"></div>
+                    <div class="swatch" style="background:#FFFFFF;border-color:#ddd;" title="#FFFFFF White"></div>
+                    <div class="swatch" style="background:#1A1A1A;" title="#1A1A1A Dark Footer"></div>
                 </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">02</div>
-                    <div class="phase-content">
-                        <h4>Stories</h4>
-                        <p>PO Agent generates a full backlog with MoSCoW priorities and acceptance criteria.</p>
-                    </div>
-                </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">03</div>
-                    <div class="phase-content">
-                        <h4>Architecture</h4>
-                        <p>Architect Agent designs the system, selects the stack, and scaffolds the project.</p>
-                    </div>
-                </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">04</div>
-                    <div class="phase-content">
-                        <h4>Test Planning</h4>
-                        <p>QA Agent writes the full test plan before a single line of code is written.</p>
-                    </div>
-                </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">05</div>
-                    <div class="phase-content">
-                        <h4>Development</h4>
-                        <p>Developer Agent implements each story with TDD — red, green, refactor.</p>
-                    </div>
-                </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">06</div>
-                    <div class="phase-content">
-                        <h4>QA Execution</h4>
-                        <p>QA Agent runs smoke tests, routes failures back to Developer until all green.</p>
-                    </div>
-                </div>
-                <div class="phase-arrow">→</div>
-                <div class="phase">
-                    <div class="phase-num">07</div>
-                    <div class="phase-content">
-                        <h4>Deployment</h4>
-                        <p>DevOps Agent deploys to the right platform with CI/CD and verifies the live URL.</p>
-                    </div>
-                </div>
+                <a href="bci/" class="card-btn">View Theme →</a>
             </div>
         </div>
-    </section>
 
-    <!-- PROJECTS TABLE -->
-    <section class="section" id="projects">
-        <div class="section-inner">
-            <div class="section-label">DELIVERED PROJECTS</div>
-            <h2>Built by the factory.</h2>
-            <p class="section-desc">Every project below was designed, built, tested, and deployed autonomously by the DSF agent pipeline.</p>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Project</th>
-                            <th>Stack</th>
-                            <th>Platform</th>
-                            <th>Stories</th>
-                            <th>Tests</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="proj-name">DSF Dashboard</div>
-                                <div class="proj-desc">Real-time Kanban monitoring for the agent pipeline</div>
-                            </td>
-                            <td><span class="tag">FastAPI</span> <span class="tag">HTMX</span> <span class="tag">Tailwind</span></td>
-                            <td><span class="tag tag-blue">Railway</span></td>
-                            <td>35</td>
-                            <td>150+</td>
-                            <td><span class="status-live">● Live</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="proj-name">Plane.so Integration</div>
-                                <div class="proj-desc">PlaneClient utility + agent lifecycle hooks</div>
-                            </td>
-                            <td><span class="tag">Python</span> <span class="tag">REST API</span></td>
-                            <td><span class="tag tag-gray">Library</span></td>
-                            <td>6</td>
-                            <td>238</td>
-                            <td><span class="status-live">● Done</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="proj-name">Hello World Demo</div>
-                                <div class="proj-desc">End-to-end pipeline test — static site deployment</div>
-                            </td>
-                            <td><span class="tag">HTML</span> <span class="tag">CSS</span></td>
-                            <td><span class="tag tag-green">GitHub Pages</span></td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td><span class="status-live">● Live</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- BCG Card -->
+        <div class="theme-card bcg">
+            <div class="card-strip"></div>
+            <div class="card-body">
+                <span class="card-badge">BCG</span>
+                <div class="card-title">BCG Consulting</div>
+                <div class="card-subtitle">Classic Red &amp; Gray</div>
+                <div class="card-swatch">
+                    <div class="swatch" style="background:#CC0000;" title="#CC0000 Red"></div>
+                    <div class="swatch" style="background:#1A1A1A;" title="#1A1A1A Dark Gray"></div>
+                    <div class="swatch" style="background:#333333;" title="#333333 Body Gray"></div>
+                    <div class="swatch" style="background:#FFFFFF;border-color:#ddd;" title="#FFFFFF White"></div>
+                </div>
+                <a href="bcg/" class="card-btn">View Theme →</a>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-left">
-                <div class="footer-logo">DSF</div>
-                <p>Dark Software Factory<br>Autonomous AI-powered software delivery.</p>
-            </div>
-            <div class="footer-right">
-                <p>Built with Claude Sonnet 4.6 · Tracked on Plane.so · Deployed via GitHub Actions</p>
-                <p class="footer-copy">© 2026 Dark Software Factory</p>
-            </div>
-        </div>
+    </div>
+
+    <footer class="gallery-footer">
+        <p>Dark Software Factory · Built by autonomous AI agents · © 2026</p>
+        <p>Deployed via GitHub Actions · Tracked on Plane.so</p>
     </footer>
 
 </body>
